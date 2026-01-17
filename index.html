@@ -14,6 +14,7 @@
             align-items: center;
             flex-direction: column;
             font-family: 'Segoe UI', Arial, sans-serif;
+            position: relative;
         }
         .logo {
             max-width: 400px;
@@ -32,6 +33,23 @@
             text-align: center;
             line-height: 1.7;
         }
+        .footer-email {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 1px;
+        }
+        .footer-email a {
+            color: #0074d9;
+            text-decoration: none;
+        }
+        .footer-email a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -41,6 +59,9 @@
         Tezliklə açılacaq<br>
         Coming soon<br>
         Скоро открытие
+    </div>
+    <div class="footer-email">
+        <a href="mailto:studio@seslabs.az">studio@seslabs.az</a>
     </div>
 </body>
 </html>
