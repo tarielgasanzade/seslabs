@@ -50,10 +50,29 @@
         .footer-email a:hover {
             text-decoration: underline;
         }
+        #intro-logo {
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 24px;
+            display: block;
+            background: none;
+        }
+        #static-logo {
+            display: none; /* Скрыть изначально */
+        }
     </style>
 </head>
 <body>
-    <img src="seslabs.png" alt="Sestlabs logo" class="logo">
+    <!-- Видео-анимация логотипа -->
+    <video id="intro-logo"
+        src="logo.mp4"
+        autoplay
+        muted
+        playsinline
+        style="background: transparent;">
+    </video>
+    <!-- Основной статичный логотип (после проигрыша видео) -->
+    <img src="seslabs.png" alt="Sestlabs logo" class="logo" id="static-logo">
     <div class="subtitle">SOUND FOR CINEMA</div>
     <div class="coming-soon">
         Tezliklə açılacaq<br>
@@ -63,5 +82,18 @@
     <div class="footer-email">
         <a href="mailto:studio@seslabs.az">studio@seslabs.az</a>
     </div>
+
+    <script>
+      const intro = document.getElementById('intro-logo');
+      const logo = document.getElementById('static-logo');
+      intro.addEventListener('ended', function() {
+        intro.style.display = "none";
+        logo.style.display = "block";
+      }, false);
+      intro.addEventListener('error', function() {
+        intro.style.display = "none";
+        logo.style.display = "block";
+      });
+    </script>
 </body>
 </html>
